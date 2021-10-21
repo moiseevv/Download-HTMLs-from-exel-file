@@ -10,15 +10,15 @@ print(row_count)
 for i in range(2, row_count+1):
     print("Строка", i)
     try:
-        link_xml = ws.cell(i, 44).hyperlink.display  # 46 строка это ссылка на xml
+        link_xml = ws.cell(i, 45).hyperlink.display  # 46 строка это ссылка на xml
         print("link_xml ", link_xml)
         kadastr_num_file = ws.cell(i, 4).value
         kadastr_num_file = kadastr_num_file.replace(':', "_")
         print('Кадастровый номер ', kadastr_num_file)
         saved_xml_file = str(f'file_html\\{kadastr_num_file}.html')
         r = requests.get(link_xml)
-        html = r.text
-        html = html.replace('charset=UTF-8','charset=ANSI')
+        html = r.content
+        #html = r.content
         # html = html.replace('\u04b7','')
         # html = html.replace('\u1d34','')
         # html = html.replace('\u1d7e','')
@@ -44,7 +44,7 @@ for i in range(2, row_count+1):
         # html = html.replace('\u1d3b','')
         
 
-        f = open(saved_xml_file, 'x')
+        f = open(saved_xml_file, 'wb')
         f.write(html)
         f.close()
 
