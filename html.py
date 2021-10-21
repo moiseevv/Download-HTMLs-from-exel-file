@@ -7,7 +7,7 @@ ws = wb.active
 row_count = ws.max_row
 print(row_count)
 
-for i in range(2, row_count+1):
+for i in range(3194, row_count+1):
     print("Строка", i)
     try:
         link_xml = ws.cell(i, 45).hyperlink.display  # 46 строка это ссылка на xml
