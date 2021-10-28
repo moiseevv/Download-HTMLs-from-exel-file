@@ -31,6 +31,3 @@ for i in range(2, row_count + 1):
     except FileExistsError:
         pass
 
-
-    1
-    2
