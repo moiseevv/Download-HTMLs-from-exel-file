@@ -1,6 +1,6 @@
 import requests
 from openpyxl import load_workbook as lwb
-column_kadastr = 4          # Как правило 4 - я
+column_kadastr = 5          # Как правило 4 - я
 column_link_on_html = 45    # Как правило 45 - я
 
 
@@ -30,3 +30,7 @@ for i in range(2, row_count + 1):
         pass
     except FileExistsError:
         pass
+
+
+    1
+    2
